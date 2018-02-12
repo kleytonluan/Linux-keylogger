@@ -1,5 +1,6 @@
 # keyloggerlinux
 Configurando um keylogger no linux
+_____________________________________________________________________________________________________
 Script para baixar e configurar keykogger em maquinas linux
 
 - Inciando a confirguração do servidor de e-mail do sistema:
@@ -17,13 +18,13 @@ Script para baixar e configurar keykogger em maquinas linux
 
 - Siga as orientações do script.
 
+- Iniciando a execução do script keylogs.sh.
+  - Dê permissão de execução:
 
-Faça o download dos arquivos
+    chmod +x keylogs.sh
+  
+  - Execute o script:
 
-Dê permissão de execução:
-
-  chmod +x keylogs.sh
-
-Execute o script:
-
-./keylogs.sh
+    ./keylogs.sh
+    
+_____________________________________________________________________________________________________
