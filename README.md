@@ -1,9 +1,24 @@
 # keyloggerlinux
 Configurando um keylogger no linux
-
 Script para baixar e configurar keykogger em maquinas linux
 
-Faça do download dos arquivos
+- Inciando a confirguração do servidor de e-mail do sistema:
+- Para configurar o servidor de e-mail utilizando ssmtp, execute o script smtpserver.sh
+
+  chmod +x smtpserver.sh
+  ./smtpserver.sh
+
+- Siga as orientações do script.
+
+- Para configurar o servidor de e-mail utilizando postfix, execute o scritp postfixserver.sh
+
+  chmod +x postfixserver.sh
+  ./postfixserver.sh
+
+- Siga as orientações do script.
+
+
+Faça o download dos arquivos
 
 Dê permissão de execução:
 
