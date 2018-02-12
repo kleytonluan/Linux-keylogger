@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Instalar e configurar servidor smtp"
+echo -e "Instalar e configurar servidor de e-mail"
 sleep 2
 
 echo -e "Instalando dependencias"
@@ -12,20 +12,16 @@ sudo apt-get install mailutils -y
 sudo apt-get install libsasl2-2 -y
 sudo apt-get install ca-certificates -y
 sudo apt-get install libsasl2-modules -y
-sudo apt-get install ssmtp -y
 
 echo -e ""
 echo -e "Configurando servidor"
 sleep 2
 
-conf1="ssmtp.conf"
 conf2="main.cf"
 
 sudo mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 sudo cp $conf2 /etc/postfix/
 
-#sudo mv /etc/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf.old
-#sudo cp $conf1 /etc/ssmtp/
 sleep 2
 echo -e ""
 echo -e "Configurar e-mail de saida"
