@@ -143,6 +143,7 @@ case "$resposta" in
 	fi
 	;;
         4)
+	echo -e "OPÇÃO $resposta -> SAIR DO SISTEMA"
         cd ..
         echo -e " -> SAINDO DO SISTEMA"
         sleep 2
