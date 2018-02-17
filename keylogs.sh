@@ -77,6 +77,7 @@ echo -e "[0] INICIAR KEYLOGGER"
 echo -e "[1] ABRIR JANELA DO LOGKEYS"
 echo -e "[2] ENVIAR LOGS POR E-MAIL"
 echo -e "[3] PARAR KEYLOGGER E SAIR DO SISTEMA"
+echo -e "[4] SÓ SAIR"
 echo "------------------------------------------------"
 read resposta
 case "$resposta" in
@@ -140,7 +141,20 @@ case "$resposta" in
 		sleep 2
 		clear
 	fi
-    	;;
+	;;
+        4)
+        cd ..
+        echo -e " -> SAINDO DO SISTEMA"
+        sleep 2
+        echo -e " -> APAGANDO $arquivo1"
+        rm master.zip
+        sleep 2
+        echo -e " -> APAGANDO PASTA $arquivo2"
+        rm -r logkeys-master
+        sleep 2
+        echo -e " -> SISTEMA FINALIZADO."
+        exit
+	;;
     	*)
         echo " -> OPÇÃO $resposta -> OPÇÃO INVÁLIDA!"
 	sleep 2
