@@ -122,7 +122,6 @@ case "$resposta" in
 		sleep 2
 		echo " -> APAGANDO RASTROS"
 		sleep 2
-		cd ..
 			if [ -f "$arquivo1" ] || [ -f "$arquivo2" ] ; then
 				echo -e " -> APAGANDO $arquivo1"
 				rm master.zip
