@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#Luan Kleyton
-
 data=`date +%d-%m-%y`
 
 arquivo1='keyloggerlinux/'
@@ -50,7 +48,7 @@ case "$resposta" in
         echo -e "OPÇÃO $resposta -> ABRINDO JANELA DE LOG DO LOGKEYS E INICIANDO O SISTEMA: "
         	if pgrep gnome-terminal > /dev/null 
 		    then
-			    gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
+			gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
 		else
 		    	apt-get install gnome-terminal -y
 	        	gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
@@ -99,7 +97,7 @@ case "$resposta" in
 		        sleep 1
 		        clear
 	        fi
-	    ;;
+	;;
         4)
 	        echo -e "OPÇÃO $resposta -> SAIR DO SISTEMA"
             cd ..
@@ -107,16 +105,16 @@ case "$resposta" in
             sleep 1
 	        if [ -f "$arquivo1" ]; then
         	        echo -e " -> APAGANDO $arquivo1"
-#		            cd ..
-#                   rm -rf keyloggerlinux/
-                    sleep 1
+#		        cd ..
+#                   	rm -rf keyloggerlinux/
+                    	sleep 1
        	        else
         	        echo -e " -> PASTA $arquivo1 JÁ APAGADA!"
-                    sleep 1
+                    	sleep 1
 	        fi
             echo -e " -> SISTEMA FINALIZADO."
             exit
-	    ;;
+	;;
     	*)
             echo " -> OPÇÃO $resposta -> OPÇÃO INVÁLIDA!"
 	        sleep 1
