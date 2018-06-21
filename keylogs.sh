@@ -75,18 +75,8 @@ case "$resposta" in
 	echo -e " -> SAINDO..."
 	sleep 1
 	logkeys -k
+        rm -rf $arquivo1 $log
 	sleep 1
-	echo " -> APAGANDO RASTROS"
-	sleep 1
-	if [ -f "$arquivo1" ]; then
-		echo -e " -> APAGANDO PASTA $arquivo1"
-		cd ..
-	      	rm -rf keyloggerlinux/
-		sleep 1
-	else
-    		echo -e " -> PASTA $arquivo1 JÁ APAGADA!"
-	    	sleep 1
-	fi
 	echo -e " -> SISTEMA FINALIZADO."
         exit
 	;;
@@ -94,16 +84,8 @@ case "$resposta" in
 	echo -e "OPÇÃO $resposta -> SAIR DO SISTEMA"
         cd ..
         echo -e " -> SAINDO DO SISTEMA"
-        sleep 1
-	if [ -f "$arquivo1" ]; then
-                echo -e " -> APAGANDO $arquivo1"
-	        cd ..
-        	rm -rf keyloggerlinux/
-                sleep 1
-	else
-                echo -e " -> PASTA $arquivo1 JÁ APAGADA!"
-               	sleep 1
-	fi
+        rm -rf $arquivo1 $log
+	sleep 1
         echo -e " -> SISTEMA FINALIZADO."
         exit
 	;;
