@@ -3,7 +3,7 @@
 data=`date +%d-%m-%y`
 
 arquivo1='keyloggerlinux/'
-arquivo2='/etc/logkeys'
+arquivo2='/etc/default/logkeys'
 
 echo -e "INICIANDO O SISTEMA DE KEYLOGGER"
 sleep 1
@@ -11,12 +11,13 @@ echo -e " -> INICIANDO DOWNLOADS NECESSÁRIOS"
 sleep 1
 
 if [ -f "$arquivo2" ]; then
-	echo -e " -> LOGKEYS NÃO ENCONTRADO. BAIXANDO..."
-	apt-get install logkeys -y
-	sleep 1
+	echo -e " -> LOGKEYS JÁ BAIXADO!"
+        sleep 1
 else
-	echo -e " -> UNZIP E LOGKEYS JÁ BAIXADOS!"
-	sleep 1
+	echo -e " -> LOGKEYS NÃO ENCONTRADO. BAIXANDO..."
+        apt-get install logkeys -y > /dev/null
+        echo -e " -> OK"
+        sleep 1
 fi
 
 log="/var/log/logkeys.log"
@@ -45,11 +46,11 @@ case "$resposta" in
 	;;
 	1)
         echo -e "OPÇÃO $resposta -> ABRINDO JANELA DE LOG DO LOGKEYS E INICIANDO O SISTEMA: "
-        if pgrep gnome-terminal > /dev/null 
-	    then
-		gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
+	if pgrep gnome-terminal > /dev/null
+	then
+	        gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
 	else
-	    	apt-get install gnome-terminal -y
+	    	apt-get install gnome-terminal -y > /dev/null
 	       	gnome-terminal -x bash -c "tail -f $log; exec $SHELL";
 	fi
 	sleep 1
